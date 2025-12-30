@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5785620D-5635-48F2-AAF7-87317A6CC5C2}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|c:\\users\\guira\\desktop\\meu\\projetos portf\u00F3lio\\sistema-controle-estoque\\src\\sistemaestoque.application\\dtos\\categoria\\categoriaupdatedtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5785620D-5635-48F2-AAF7-87317A6CC5C2}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\dtos\\categoria\\categoriaupdatedtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5785620D-5635-48F2-AAF7-87317A6CC5C2}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|c:\\users\\guira\\desktop\\meu\\projetos portf\u00F3lio\\sistema-controle-estoque\\src\\sistemaestoque.application\\dtos\\categoria\\categoriacreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5785620D-5635-48F2-AAF7-87317A6CC5C2}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\dtos\\categoria\\categoriacreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoriaUpdateDTOs.cs",
+              "DocumentMoniker": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Application\\DTOs\\Categoria\\CategoriaUpdateDTOs.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Application\\DTOs\\Categoria\\CategoriaUpdateDTOs.cs",
+              "ToolTip": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Application\\DTOs\\Categoria\\CategoriaUpdateDTOs.cs",
+              "RelativeToolTip": "SistemaEstoque.Application\\DTOs\\Categoria\\CategoriaUpdateDTOs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T20:23:03.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CategoriaCreateDTO.cs",
+              "DocumentMoniker": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Application\\DTOs\\Categoria\\CategoriaCreateDTO.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Application\\DTOs\\Categoria\\CategoriaCreateDTO.cs",
+              "ToolTip": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Application\\DTOs\\Categoria\\CategoriaCreateDTO.cs",
+              "RelativeToolTip": "SistemaEstoque.Application\\DTOs\\Categoria\\CategoriaCreateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-30T20:19:23.546Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

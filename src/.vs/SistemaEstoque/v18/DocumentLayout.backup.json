@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|c:\\users\\guira\\desktop\\meu\\projetos portf\u00F3lio\\sistema-controle-estoque\\src\\sistemaestoque.domain\\interfaces\\icategoriarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\interfaces\\icategoriarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|c:\\users\\guira\\desktop\\meu\\projetos portf\u00F3lio\\sistema-controle-estoque\\src\\sistemaestoque.domain\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|c:\\users\\guira\\desktop\\meu\\projetos portf\u00F3lio\\sistema-controle-estoque\\src\\sistemaestoque.domain\\interfaces\\iprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\interfaces\\iprodutorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|c:\\users\\guira\\desktop\\meu\\projetos portf\u00F3lio\\sistema-controle-estoque\\src\\sistemaestoque.domain\\interfaces\\imovimentacaorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\interfaces\\imovimentacaorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|c:\\users\\guira\\desktop\\meu\\projetos portf\u00F3lio\\sistema-controle-estoque\\src\\sistemaestoque.domain\\entities\\movimentacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\movimentacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Movimentacao.cs",
+              "DocumentMoniker": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Entities\\Movimentacao.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Movimentacao.cs",
+              "ToolTip": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Entities\\Movimentacao.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Movimentacao.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA3wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T19:30:19.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IMovimentacaoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Interfaces\\IMovimentacaoRepository.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Interfaces\\IMovimentacaoRepository.cs",
+              "ToolTip": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Interfaces\\IMovimentacaoRepository.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Interfaces\\IMovimentacaoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T19:29:55.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IProdutoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Interfaces\\IProdutoRepository.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Interfaces\\IProdutoRepository.cs",
+              "ToolTip": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Interfaces\\IProdutoRepository.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Interfaces\\IProdutoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T19:21:03.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IUsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Interfaces\\IUsuarioRepository.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Interfaces\\IUsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Interfaces\\IUsuarioRepository.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Interfaces\\IUsuarioRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T19:10:33.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ICategoriaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Interfaces\\ICategoriaRepository.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Interfaces\\ICategoriaRepository.cs",
+              "ToolTip": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Interfaces\\ICategoriaRepository.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Interfaces\\ICategoriaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T18:57:40.591Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
