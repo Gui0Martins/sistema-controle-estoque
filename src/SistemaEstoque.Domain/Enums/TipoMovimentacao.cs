@@ -1,7 +1,10 @@
 using System;
 
-public enum TipoMovimentacao
+namespace SistemaEstoque.Domain.Enums
 {
-    Entrada,
-    Saida
+    public enum TipoMovimentacao
+    {
+        Entrada,
+        Saida
+    }
 }

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
+﻿using SistemaEstoque.Domain.Enums;
+using System;
 
 namespace SistemaEstoque.Domain.Entities
 {
