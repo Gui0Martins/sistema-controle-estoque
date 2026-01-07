@@ -1,0 +1,15 @@
+C:\Users\guira\OneDrive\Documents\GitHub\sistema-controle-estoque\src\SistemaEstoque.Infrastructure\bin\Debug\net10.0\SistemaEstoque.Infrastructure.deps.json
+C:\Users\guira\OneDrive\Documents\GitHub\sistema-controle-estoque\src\SistemaEstoque.Infrastructure\bin\Debug\net10.0\SistemaEstoque.Infrastructure.runtimeconfig.json
+C:\Users\guira\OneDrive\Documents\GitHub\sistema-controle-estoque\src\SistemaEstoque.Infrastructure\bin\Debug\net10.0\SistemaEstoque.Infrastructure.dll
+C:\Users\guira\OneDrive\Documents\GitHub\sistema-controle-estoque\src\SistemaEstoque.Infrastructure\bin\Debug\net10.0\SistemaEstoque.Infrastructure.pdb
+C:\Users\guira\OneDrive\Documents\GitHub\sistema-controle-estoque\src\SistemaEstoque.Infrastructure\obj\Debug\net10.0\SistemaEstoque.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\guira\OneDrive\Documents\GitHub\sistema-controle-estoque\src\SistemaEstoque.Infrastructure\obj\Debug\net10.0\SistemaEstoque.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\guira\OneDrive\Documents\GitHub\sistema-controle-estoque\src\SistemaEstoque.Infrastructure\obj\Debug\net10.0\SistemaEstoque.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\guira\OneDrive\Documents\GitHub\sistema-controle-estoque\src\SistemaEstoque.Infrastructure\obj\Debug\net10.0\SistemaEstoque.Infrastructure.AssemblyInfo.cs
+C:\Users\guira\OneDrive\Documents\GitHub\sistema-controle-estoque\src\SistemaEstoque.Infrastructure\obj\Debug\net10.0\SistemaEstoque.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\guira\OneDrive\Documents\GitHub\sistema-controle-estoque\src\SistemaEstoque.Infrastructure\obj\Debug\net10.0\SistemaEstoque.Infrastructure.sourcelink.json
+C:\Users\guira\OneDrive\Documents\GitHub\sistema-controle-estoque\src\SistemaEstoque.Infrastructure\obj\Debug\net10.0\SistemaEstoque.Infrastructure.dll
+C:\Users\guira\OneDrive\Documents\GitHub\sistema-controle-estoque\src\SistemaEstoque.Infrastructure\obj\Debug\net10.0\refint\SistemaEstoque.Infrastructure.dll
+C:\Users\guira\OneDrive\Documents\GitHub\sistema-controle-estoque\src\SistemaEstoque.Infrastructure\obj\Debug\net10.0\SistemaEstoque.Infrastructure.pdb
+C:\Users\guira\OneDrive\Documents\GitHub\sistema-controle-estoque\src\SistemaEstoque.Infrastructure\obj\Debug\net10.0\SistemaEstoque.Infrastructure.genruntimeconfig.cache
+C:\Users\guira\OneDrive\Documents\GitHub\sistema-controle-estoque\src\SistemaEstoque.Infrastructure\obj\Debug\net10.0\ref\SistemaEstoque.Infrastructure.dll
