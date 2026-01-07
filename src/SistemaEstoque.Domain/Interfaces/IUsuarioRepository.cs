@@ -4,14 +4,14 @@ namespace SistemaEstoque.Domain.Interfaces
 {
     public interface IUsuarioRepository
     {
-        Usuario? GetById(Guid id);
-        Usuario? GetByEmail(string email);
-        void Add(Usuario usuario);
-        void Update(Usuario usuario);
-        void Delete(Guid id);
-        IEnumerable<Usuario> FindAll();
-        IEnumerable<Usuario> FindByName(string name);
-        IEnumerable<Usuario> FindByActive(bool isActive);
-        bool IsEmailUnique(string email);
+        Task<Usuario?> GetById(Guid id);
+        Task<Usuario?> GetByEmail(string email);
+        Task Add(Usuario usuario);
+        Task Update(Usuario usuario);
+        Task Delete(Guid id);
+        Task<IEnumerable<Usuario>> FindAll();
+        Task<IEnumerable<Usuario>> FindByName(string name);
+        Task<IEnumerable<Usuario>> FindByActive(bool isActive);
+        Task<bool> IsEmailUnique(string email);
     }
 }

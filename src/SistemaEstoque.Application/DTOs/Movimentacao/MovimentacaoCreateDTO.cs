@@ -6,6 +6,8 @@ namespace SistemaEstoque.Application.DTOs.Movimentacao
     public class MovimentacaoCreateDTO
     {
         // O id do usuario será obtido a partir do contexto da aplicação (usuário autenticado)
+        // Temporariamente, ele será adicinado aqui até que a autenticação seja implementada
+        public Guid UsuarioId { get; set; }
         public Guid ProdutoId { get; set; }
         public TipoMovimentacao TipoMovimentacao { get; set; }
         public int Quantidade { get; set; }

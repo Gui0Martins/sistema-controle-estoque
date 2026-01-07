@@ -4,14 +4,14 @@ namespace SistemaEstoque.Domain.Interfaces
 {
     public interface IProdutoRepository
     {
-        Produto? GetById(Guid id);
-        Produto? GetBySku(string sku);
-        void Add(Produto produto);
-        void Update(Produto produto);
-        void Delete(Guid id);
-        IEnumerable<Produto> FindAll();
-        IEnumerable<Produto> FindByName(string name);
-        IEnumerable<Produto> FindByCategory(Guid categoryId);
-        IEnumerable<Produto> FindByActive(bool isActive);
+        Task<Produto?> GetById(Guid id);
+        Task<Produto?> GetBySku(string sku);
+        Task Add(Produto produto);
+        Task Update(Produto produto);
+        Task Delete(Guid id);
+        Task<IEnumerable<Produto>> FindAll();
+        Task<IEnumerable<Produto>> FindByName(string name);
+        Task<IEnumerable<Produto>> FindByCategory(Guid categoryId);
+        Task<IEnumerable<Produto>> FindByActive(bool isActive);
     }
 }

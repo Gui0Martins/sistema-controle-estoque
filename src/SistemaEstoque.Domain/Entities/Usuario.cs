@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using System.Text;
 
 namespace SistemaEstoque.Domain.Entities
@@ -38,18 +37,19 @@ namespace SistemaEstoque.Domain.Entities
         {
             if (string.IsNullOrWhiteSpace(novoNome))
                 throw new ArgumentException("Nome do usuário não pode ser vazio.", nameof(novoNome));
-            else
-                Nome = novoNome;
+            Nome = novoNome;
+        }
+
+        public void AlterarEmail(string novoEmail)
+        {
+            VerificarEntradaEmail(novoEmail);
+            Email = novoEmail;
         }
 
         public void AlterarSenha(string novaSenhaHash)
         {
-            if (string.IsNullOrWhiteSpace(novaSenhaHash))
-                throw new ArgumentException("Senha do usuário não pode ser vazia.", nameof(novaSenhaHash));
-            else if (novaSenhaHash.Length < tamanhoMinimoSenha)
-                throw new ArgumentException($"Senha do usuário deve ter no mínimo {tamanhoMinimoSenha} caracteres.", nameof(novaSenhaHash));
-            else
-                SenhaHash = novaSenhaHash;
+            VerificarEntradaSenha(novaSenhaHash);
+            SenhaHash = novaSenhaHash;
         }   
 
         private void ValidarEntradas(string nome, string email, string senhaHash)

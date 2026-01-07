@@ -4,12 +4,12 @@ namespace SistemaEstoque.Domain.Interfaces
 {
 	public interface ICategoriaRepository
 	{
-		Categoria? GetById(Guid id);
-		void Add(Categoria categoria);
-		void Update(Categoria categoria);
-		void Delete(Guid id);
-		IEnumerable<Categoria> FindAll();
-		IEnumerable<Categoria> FindByName(string name);
-		IEnumerable<Categoria> FindByActive(bool isActive);
+		Task<Categoria?> GetById(Guid id);
+		Task Add(Categoria categoria);
+		Task Update(Categoria categoria);
+		Task Delete(Guid id);
+		Task<IEnumerable<Categoria>> FindAll();
+		Task<IEnumerable<Categoria>> FindByName(string name);
+		Task<IEnumerable<Categoria>> FindByActive(bool isActive);
 	}
 }

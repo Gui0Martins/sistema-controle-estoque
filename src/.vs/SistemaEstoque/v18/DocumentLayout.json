@@ -1,14 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\",
+  "WorkspaceRootPath": "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5785620D-5635-48F2-AAF7-87317A6CC5C2}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|c:\\users\\guira\\desktop\\meu\\projetos portf\u00F3lio\\sistema-controle-estoque\\src\\sistemaestoque.application\\dtos\\categoria\\categoriaupdatedtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5785620D-5635-48F2-AAF7-87317A6CC5C2}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\dtos\\categoria\\categoriaupdatedtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6319177C-83EC-4B78-B801-DB95D0BABDE4}|SistemaEstoque.Infrastructure\\SistemaEstoque.Infrastructure.csproj|c:\\users\\guira\\onedrive\\documents\\github\\sistema-controle-estoque\\src\\sistemaestoque.infrastructure\\data\\sistemaestoquedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6319177C-83EC-4B78-B801-DB95D0BABDE4}|SistemaEstoque.Infrastructure\\SistemaEstoque.Infrastructure.csproj|solutionrelative:sistemaestoque.infrastructure\\data\\sistemaestoquedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5785620D-5635-48F2-AAF7-87317A6CC5C2}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|c:\\users\\guira\\desktop\\meu\\projetos portf\u00F3lio\\sistema-controle-estoque\\src\\sistemaestoque.application\\dtos\\categoria\\categoriacreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5785620D-5635-48F2-AAF7-87317A6CC5C2}|SistemaEstoque.Application\\SistemaEstoque.Application.csproj|solutionrelative:sistemaestoque.application\\dtos\\categoria\\categoriacreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|c:\\users\\guira\\onedrive\\documents\\github\\sistema-controle-estoque\\src\\sistemaestoque.domain\\entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|c:\\users\\guira\\onedrive\\documents\\github\\sistema-controle-estoque\\src\\sistemaestoque.domain\\entities\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|c:\\users\\guira\\onedrive\\documents\\github\\sistema-controle-estoque\\src\\sistemaestoque.domain\\entities\\movimentacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\movimentacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|c:\\users\\guira\\onedrive\\documents\\github\\sistema-controle-estoque\\src\\sistemaestoque.domain\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24CB5262-6A87-42E1-95BD-F6EBE5A1C96E}|SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj|solutionrelative:sistemaestoque.domain\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6319177C-83EC-4B78-B801-DB95D0BABDE4}|SistemaEstoque.Infrastructure\\SistemaEstoque.Infrastructure.csproj|c:\\users\\guira\\onedrive\\documents\\github\\sistema-controle-estoque\\src\\sistemaestoque.infrastructure\\repositories\\movimentacaorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6319177C-83EC-4B78-B801-DB95D0BABDE4}|SistemaEstoque.Infrastructure\\SistemaEstoque.Infrastructure.csproj|solutionrelative:sistemaestoque.infrastructure\\repositories\\movimentacaorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +34,105 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CategoriaUpdateDTOs.cs",
-              "DocumentMoniker": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Application\\DTOs\\Categoria\\CategoriaUpdateDTOs.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\DTOs\\Categoria\\CategoriaUpdateDTOs.cs",
-              "ToolTip": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Application\\DTOs\\Categoria\\CategoriaUpdateDTOs.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\DTOs\\Categoria\\CategoriaUpdateDTOs.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
+              "Title": "SistemaEstoqueDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\SistemaEstoque.Infrastructure\\Data\\SistemaEstoqueDbContext.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Infrastructure\\Data\\SistemaEstoqueDbContext.cs",
+              "ToolTip": "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\SistemaEstoque.Infrastructure\\Data\\SistemaEstoqueDbContext.cs",
+              "RelativeToolTip": "SistemaEstoque.Infrastructure\\Data\\SistemaEstoqueDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAABiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T20:23:03.715Z",
+              "WhenOpened": "2026-01-07T15:18:20.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MovimentacaoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\SistemaEstoque.Infrastructure\\Repositories\\MovimentacaoRepository.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Infrastructure\\Repositories\\MovimentacaoRepository.cs",
+              "ToolTip": "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\SistemaEstoque.Infrastructure\\Repositories\\MovimentacaoRepository.cs",
+              "RelativeToolTip": "SistemaEstoque.Infrastructure\\Repositories\\MovimentacaoRepository.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwCwAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T20:39:54.257Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "4bc9ea70-9e50-4b24-b329-c9490acb7204",
+        "Display": 1,
+        "X": 1345,
+        "Y": 301,
+        "Width": 1169,
+        "Height": 785,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Categoria.cs",
+              "DocumentMoniker": "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Entities\\Categoria.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Categoria.cs",
+              "ToolTip": "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Entities\\Categoria.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Categoria.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T15:26:27.984Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CategoriaCreateDTO.cs",
-              "DocumentMoniker": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Application\\DTOs\\Categoria\\CategoriaCreateDTO.cs",
-              "RelativeDocumentMoniker": "SistemaEstoque.Application\\DTOs\\Categoria\\CategoriaCreateDTO.cs",
-              "ToolTip": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portf\u00F3lio\\sistema-controle-estoque\\src\\SistemaEstoque.Application\\DTOs\\Categoria\\CategoriaCreateDTO.cs",
-              "RelativeToolTip": "SistemaEstoque.Application\\DTOs\\Categoria\\CategoriaCreateDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Entities\\Usuario.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Usuario.cs",
+              "ToolTip": "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Entities\\Usuario.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-30T20:19:23.546Z",
+              "WhenOpened": "2026-01-07T15:32:04.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Produto.cs",
+              "DocumentMoniker": "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Entities\\Produto.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Produto.cs",
+              "ToolTip": "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Entities\\Produto.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Produto.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T15:32:04.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Movimentacao.cs",
+              "DocumentMoniker": "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Entities\\Movimentacao.cs",
+              "RelativeDocumentMoniker": "SistemaEstoque.Domain\\Entities\\Movimentacao.cs",
+              "ToolTip": "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\Entities\\Movimentacao.cs",
+              "RelativeToolTip": "SistemaEstoque.Domain\\Entities\\Movimentacao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T15:32:00.469Z",
               "EditorCaption": ""
             }
           ]

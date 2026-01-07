@@ -14,14 +14,14 @@ namespace SistemaEstoque.Domain.Entities
         public DateTime DataMovimentacao { get; private set; }
         public DateTime DataRegistro { get; private set; }
 
-        public Movimentacao(Produto produto, TipoMovimentacao tipoMovimentacao, int quantidade, Usuario usuario, string observacao, DateTime dataMovimentacao)
+        public Movimentacao(Guid produtoId, TipoMovimentacao tipoMovimentacao, int quantidade, Guid usuarioId, string observacao, DateTime dataMovimentacao)
         {
             Validacoes(quantidade, dataMovimentacao);
             Id = Guid.NewGuid();
-            ProdutoId = produto.Id;
+            ProdutoId = produtoId;
             TipoMovimentacao = tipoMovimentacao;
             Quantidade = quantidade;
-            UsuarioId = usuario.Id;
+            UsuarioId = usuarioId;
             DataRegistro = DateTime.Now;
             DataMovimentacao = dataMovimentacao;
 
@@ -47,6 +47,17 @@ namespace SistemaEstoque.Domain.Entities
         {
             if (dataMovimentacao > DateTime.Now)
                 throw new ArgumentException("Data da movimentação não pode ser futura.", nameof(dataMovimentacao));
+        }
+
+        public void AtualizarDados(int quantidade, string observacao, DateTime dataMovimentacao)
+        {
+            Validacoes(quantidade, dataMovimentacao);
+            Quantidade = quantidade;
+            DataMovimentacao = dataMovimentacao;
+            if (string.IsNullOrWhiteSpace(observacao))
+                Observacao = "Sem observação";
+            else
+                Observacao = observacao;
         }
     }
 }

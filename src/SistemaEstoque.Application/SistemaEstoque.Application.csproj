@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaEstoque.API\SistemaEstoque.API.csproj" />
+    <ProjectReference Include="..\SistemaEstoque.Domain\SistemaEstoque.Domain.csproj" />
+    <ProjectReference Include="..\SistemaEstoque.Infrastructure\SistemaEstoque.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

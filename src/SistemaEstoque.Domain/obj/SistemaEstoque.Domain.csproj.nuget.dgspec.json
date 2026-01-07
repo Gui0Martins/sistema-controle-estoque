@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portfólio\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj": {}
+    "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portfólio\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj": {
+    "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portfólio\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj",
         "projectName": "SistemaEstoque.Domain",
-        "projectPath": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portfólio\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj",
+        "projectPath": "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\SistemaEstoque.Domain.csproj",
         "packagesPath": "C:\\Users\\guira\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\guira\\Desktop\\Meu\\Projetos Portfólio\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\obj\\",
+        "outputPath": "C:\\Users\\guira\\OneDrive\\Documents\\GitHub\\sistema-controle-estoque\\src\\SistemaEstoque.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
