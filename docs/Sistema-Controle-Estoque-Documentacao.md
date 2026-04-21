@@ -1,553 +1,387 @@
 # Sistema de Controle de Estoque - Documentação Técnica
 
-## 1. Visão Geral do Projeto
+## 1. Visão geral
 
-Sistema web para gerenciamento de estoque de produtos, permitindo controle de entradas, saídas, fornecedores e geração de relatórios. O projeto visa demonstrar competências em desenvolvimento de APIs RESTful, modelagem de banco de dados e arquitetura em camadas.
+O Sistema de Controle de Estoque é uma API backend desenvolvida com foco acadêmico e de portfólio. O projeto foi pensado para demonstrar uma implementação organizada de uma aplicação de estoque usando ASP.NET Core, Entity Framework Core e separação em camadas.
 
-**Objetivo**: Fornecer uma solução simples e eficiente para controle de inventário de pequenas e médias empresas.
+Esta documentação deve ser entendida em dois níveis:
 
----
+1. **visão do sistema**: descreve a ideia geral e a direção arquitetural do projeto;
+2. **escopo da versão de portfólio**: define o recorte mínimo que deve ficar funcional, demonstrável e coerente.
 
-## 2. Requisitos Funcionais
-
-### RF01 - Gestão de Produtos
-- Cadastrar produtos com informações básicas (nome, descrição, código SKU, preço)
-- Editar informações de produtos existentes
-- Excluir produtos (soft delete - manter histórico)
-- Listar produtos com filtros (nome, categoria, fornecedor)
-- Visualizar detalhes de um produto específico
-- Validar SKU único no sistema
-
-### RF02 - Gestão de Categorias
-- Cadastrar categorias de produtos
-- Editar categorias existentes
-- Excluir categorias (verificar se há produtos vinculados)
-- Listar todas as categorias
-- Associar produtos a categorias
-
-### RF03 - Gestão de Fornecedores
-- Cadastrar fornecedores (nome, CNPJ, contato, endereço)
-- Editar informações de fornecedores
-- Excluir fornecedores (verificar se há produtos vinculados)
-- Listar fornecedores com paginação
-- Validar CNPJ único no sistema
-
-### RF04 - Controle de Movimentações de Estoque
-- Registrar entrada de produtos (compra/devolução)
-- Registrar saída de produtos (venda/perda)
-- Informar quantidade, motivo e data da movimentação
-- Atualizar automaticamente o estoque atual do produto
-- Registrar usuário responsável pela movimentação
-
-### RF05 - Alertas de Estoque
-- Configurar estoque mínimo por produto
-- Listar produtos abaixo do estoque mínimo
-- Configurar estoque máximo (opcional)
-
-### RF06 - Relatórios
-- Relatório de produtos em estoque (quantidade, valor total)
-- Histórico de movimentações por produto
-- Produtos mais movimentados (entrada/saída) em período
-- Valor total do estoque por categoria
-- Exportação de relatórios em JSON/CSV
-
-### RF07 - Busca e Filtros
-- Buscar produtos por nome, SKU ou código de barras
-- Filtrar por categoria
-- Filtrar por fornecedor
-- Filtrar por faixa de preço
-- Ordenação por diferentes campos
+A prioridade atual é concluir uma versão **enxuta, funcional e apresentável**, sem tentar implementar todos os recursos imaginados originalmente.
 
 ---
 
-## 3. Requisitos Não-Funcionais
+## 2. Objetivo da versão de portfólio
+
+A versão de portfólio deve entregar uma API capaz de demonstrar um fluxo real de controle de estoque, com foco em clareza estrutural e funcionamento consistente.
+
+### Objetivos principais
+
+- permitir cadastro de categorias, produtos e usuários;
+- registrar entradas e saídas de estoque;
+- manter o estoque do produto atualizado;
+- manter histórico de movimentações;
+- expor endpoints documentados via Swagger;
+- servir como projeto demonstrável em GitHub/portfólio.
+
+### O que esta versão não precisa priorizar
+
+Os itens abaixo não são obrigatórios para a entrega enxuta de portfólio:
+
+- fornecedores;
+- autenticação e autorização;
+- relatórios avançados;
+- exportação CSV/JSON;
+- dashboards;
+- logging estruturado;
+- FluentValidation;
+- AutoMapper;
+- testes automatizados;
+- deploy.
+
+Esses itens podem permanecer como evolução futura.
+
+---
+
+## 3. Escopo implementável da versão de portfólio
+
+### 3.1 Módulos principais
+
+#### Módulo de categorias
+Responsável por cadastrar, listar, consultar, atualizar e remover categorias.
+
+#### Módulo de produtos
+Responsável por cadastrar produtos, consultar seus dados e manter a quantidade em estoque.
+
+#### Módulo de usuários
+Responsável por cadastrar usuários que serão associados às movimentações.
+
+#### Módulo de movimentações
+Responsável por registrar entradas e saídas de estoque, vinculando produto, usuário, quantidade, motivo e data.
+
+---
+
+## 4. Requisitos funcionais da versão de portfólio
+
+### RF01 - Gestão de categorias
+- cadastrar categoria;
+- listar categorias;
+- consultar categoria por id;
+- atualizar categoria;
+- remover categoria, desde que a regra definida pelo sistema permita.
+
+### RF02 - Gestão de produtos
+- cadastrar produto com nome, descrição, SKU, preço, categoria e estoque inicial opcional;
+- listar produtos;
+- consultar produto por id;
+- atualizar dados do produto;
+- remover produto;
+- validar SKU único.
+
+### RF03 - Gestão de usuários
+- cadastrar usuário;
+- listar usuários;
+- consultar usuário por id;
+- atualizar dados básicos;
+- remover usuário;
+- validar e-mail único.
+
+### RF04 - Movimentações de estoque
+- registrar entrada de estoque;
+- registrar saída de estoque;
+- vincular movimentação a um produto e a um usuário;
+- registrar quantidade, motivo e data da movimentação;
+- atualizar automaticamente o estoque do produto;
+- consultar histórico de movimentações.
+
+### RF05 - Regras de consistência
+- não permitir quantidade menor ou igual a zero em movimentações;
+- não permitir saída maior do que o estoque disponível;
+- não permitir criar produto com categoria inexistente;
+- não permitir movimentação com produto inexistente;
+- não permitir movimentação com usuário inexistente.
+
+---
+
+## 5. Requisitos não funcionais priorizados
 
 ### RNF01 - Tecnologia
-- Backend: ASP.NET Core 8.0 ou superior
-- ORM: Entity Framework Core
-- Banco de Dados: SQL Server ou PostgreSQL
-- Arquitetura: API RESTful
+- backend em ASP.NET Core 8;
+- persistência com Entity Framework Core;
+- banco relacional SQL Server;
+- documentação via Swagger/OpenAPI.
 
-### RNF02 - Segurança
-- Validação de dados de entrada
-- Proteção contra SQL Injection (usar ORM adequadamente)
-- Implementar CORS para controle de origem
+### RNF02 - Organização
+- separação em camadas: API, Application, Domain e Infrastructure;
+- uso de DTOs para entrada e saída;
+- uso de repositórios e serviços;
+- código legível e coerente com o tamanho do projeto.
 
-### RNF03 - Performance
-- Paginação obrigatória para listagens
-- Índices em campos de busca frequente (SKU, nome, CNPJ)
-- Lazy loading quando apropriado
+### RNF03 - Persistência
+- uso de migrations para criação/atualização do banco;
+- chaves únicas em campos críticos, como SKU e e-mail;
+- relacionamento consistente entre entidades principais.
 
-### RNF04 - Qualidade de Código
-- Separação em camadas (Controller, Service, Repository, Domain)
-- Uso de DTOs para transferência de dados
-- Tratamento centralizado de exceções
-- Logging de operações críticas
-
-### RNF05 - Documentação
-- Documentação da API com Swagger/OpenAPI
-- README com instruções de setup
-- Comentários em lógicas complexas
-
-### RNF06 - Versionamento
-- Utilizar Git com commits semânticos
-- Branches para features (Git Flow simplificado)
+### RNF04 - Apresentação de portfólio
+- repositório limpo;
+- README honesto e atualizado;
+- instruções de execução compreensíveis;
+- endpoints testáveis pelo Swagger.
 
 ---
 
-## 4. Diagrama de Classes
+## 6. Modelo de domínio da versão enxuta
 
-```mermaid
-classDiagram
-    class Produto {
-        +int Id
-        +string Nome
-        +string Descricao
-        +string CodigoSKU
-        +decimal PrecoUnitario
-        +int QuantidadeEstoque
-        +int EstoqueMinimo
-        +int EstoqueMaximo
-        +int CategoriaId
-        +int FornecedorId
-        +bool Ativo
-        +DateTime DataCadastro
-        +DateTime? DataAtualizacao
-    }
+### Entidades principais
 
-    class Categoria {
-        +int Id
-        +string Nome
-        +string Descricao
-        +bool Ativa
-        +DateTime DataCadastro
-    }
+#### Categoria
+Representa a classificação do produto.
 
-    class Fornecedor {
-        +int Id
-        +string Nome
-        +string CNPJ
-        +string Email
-        +string Telefone
-        +string Endereco
-        +string Cidade
-        +string Estado
-        +string CEP
-        +bool Ativo
-        +DateTime DataCadastro
-    }
+Campos esperados:
+- Id
+- Nome
+- Descricao
+- Ativa
+- DataCriacao
 
-    class MovimentacaoEstoque {
-        +int Id
-        +int ProdutoId
-        +TipoMovimentacao Tipo
-        +int Quantidade
-        +string Motivo
-        +decimal ValorUnitario
-        +DateTime DataMovimentacao
-        +string UsuarioResponsavel
-        +int EstoqueAnterior
-        +int EstoqueAtual
-    }
+#### Produto
+Representa o item controlado em estoque.
 
-    class TipoMovimentacao {
-        <<enumeration>>
-        Entrada
-        Saida
-    }
+Campos esperados:
+- Id
+- Nome
+- Descricao
+- Sku
+- Preco
+- QuantidadeEstoque
+- CategoriaId
+- Ativo
+- DataCriacao
+- DataAtualizacao
 
-    Produto "1" --> "1" Categoria : pertence a
-    Produto "1" --> "1" Fornecedor : fornecido por
-    Produto "1" --> "*" MovimentacaoEstoque : possui
-    MovimentacaoEstoque --> TipoMovimentacao : usa
-```
+#### Usuario
+Representa o responsável pelo registro das movimentações.
+
+Campos esperados:
+- Id
+- Nome
+- Email
+- SenhaHash
+- Ativo
+- DataCriacao
+
+#### Movimentacao
+Representa um lançamento de entrada ou saída.
+
+Campos esperados:
+- Id
+- ProdutoId
+- UsuarioId
+- TipoMovimentacao
+- Quantidade
+- Motivo
+- DataMovimentacao
+- DataCriacao
+
+### Enum
+#### TipoMovimentacao
+- Entrada
+- Saida
 
 ---
 
-## 5. Diagrama de Banco de Dados (DER)
+## 7. Regras de negócio centrais
 
-```mermaid
-erDiagram
-    CATEGORIAS ||--o{ PRODUTOS : contem
-    FORNECEDORES ||--o{ PRODUTOS : fornece
-    PRODUTOS ||--o{ MOVIMENTACOES_ESTOQUE : registra
+Estas regras são o núcleo funcional da versão de portfólio e devem estar refletidas no código:
 
-    CATEGORIAS {
-        int Id PK
-        varchar Nome
-        varchar Descricao
-        bit Ativa
-        datetime DataCadastro
-    }
-
-    FORNECEDORES {
-        int Id PK
-        varchar Nome
-        varchar CNPJ UK
-        varchar Email
-        varchar Telefone
-        varchar Endereco
-        varchar Cidade
-        varchar Estado
-        varchar CEP
-        bit Ativo
-        datetime DataCadastro
-    }
-
-    PRODUTOS {
-        int Id PK
-        varchar Nome
-        varchar Descricao
-        varchar CodigoSKU UK
-        decimal PrecoUnitario
-        int QuantidadeEstoque
-        int EstoqueMinimo
-        int EstoqueMaximo
-        int CategoriaId FK
-        int FornecedorId FK
-        bit Ativo
-        datetime DataCadastro
-        datetime DataAtualizacao
-    }
-
-    MOVIMENTACOES_ESTOQUE {
-        int Id PK
-        int ProdutoId FK
-        int Tipo
-        int Quantidade
-        varchar Motivo
-        decimal ValorUnitario
-        datetime DataMovimentacao
-        varchar UsuarioResponsavel
-        int EstoqueAnterior
-        int EstoqueAtual
-    }
-```
-
-**Índices Sugeridos:**
-- PRODUTOS: `IX_Produtos_CodigoSKU`, `IX_Produtos_Nome`, `IX_Produtos_CategoriaId`, `IX_Produtos_FornecedorId`
-- FORNECEDORES: `IX_Fornecedores_CNPJ`
-- MOVIMENTACOES_ESTOQUE: `IX_Movimentacoes_ProdutoId`, `IX_Movimentacoes_DataMovimentacao`
+1. todo produto deve estar vinculado a uma categoria válida;
+2. toda movimentação deve estar vinculada a um produto válido;
+3. toda movimentação deve estar vinculada a um usuário válido;
+4. entrada aumenta a quantidade em estoque;
+5. saída reduz a quantidade em estoque;
+6. saída não pode deixar o estoque negativo;
+7. quantidade da movimentação deve ser maior que zero;
+8. SKU deve ser único;
+9. e-mail de usuário deve ser único.
 
 ---
 
-## 6. Arquitetura do Projeto
+## 8. Arquitetura da solução
 
-### Estrutura de Camadas
+### Estrutura desejada
 
-```
-SistemaEstoque/
-│
-├── SistemaEstoque.API/                 # Camada de Apresentação
-│   ├── Controllers/                    # Endpoints da API
-│   ├── Middlewares/                    # Exception handling, logging
-│   ├── Program.cs                      # Configuração da aplicação
-│   └── appsettings.json                # Configurações
-│
-├── SistemaEstoque.Application/         # Camada de Aplicação
-│   ├── DTOs/                           # Data Transfer Objects
-│   │   ├── Request/                    # DTOs de entrada
-│   │   └── Response/                   # DTOs de saída
-│   ├── Interfaces/                     # Interfaces de serviços
-│   ├── Services/                       # Lógica de negócio
-│   ├── Validators/                     # Validações (FluentValidation)
-│   └── Mappings/                       # AutoMapper profiles
-│
-├── SistemaEstoque.Domain/              # Camada de Domínio
-│   ├── Entities/                       # Entidades do domínio
-│   ├── Enums/                          # Enumerações
-│   ├── Interfaces/                     # Interfaces de repositórios
-│   └── Exceptions/                     # Exceções customizadas
-│
-├── SistemaEstoque.Infrastructure/      # Camada de Infraestrutura
-│   ├── Data/                           # Contexto do EF Core
-│   ├── Repositories/                   # Implementação dos repositórios
-│   ├── Migrations/                     # Migrations do EF Core
-│   └── Configuration/                  # Configurações de entidades (Fluent API)
-│
-└── SistemaEstoque.Tests/               # Testes (opcional nesta fase)
-    ├── Unit/                           # Testes unitários
-    └── Integration/                    # Testes de integração
+```text
+src/
+├── SistemaEstoque.API/
+├── SistemaEstoque.Application/
+├── SistemaEstoque.Domain/
+└── SistemaEstoque.Infrastructure/
 ```
 
-### Fluxo de Requisição
+### Papel das camadas
 
-```
-Cliente HTTP Request
-    ↓
-Controller (API Layer)
-    ↓
-Service (Application Layer) ← usa DTOs
-    ↓
-Repository (Infrastructure Layer)
-    ↓
-Database
-    ↓
-Response (DTO) → Cliente
-```
+#### API
+Responsável por:
+- controllers;
+- configuração da aplicação;
+- injeção de dependência;
+- exposição dos endpoints HTTP;
+- Swagger.
+
+#### Application
+Responsável por:
+- DTOs;
+- interfaces de serviço;
+- serviços de aplicação;
+- coordenação das operações do sistema.
+
+#### Domain
+Responsável por:
+- entidades;
+- enums;
+- regras de negócio centrais.
+
+#### Infrastructure
+Responsável por:
+- `DbContext`;
+- implementações dos repositórios;
+- configurações de persistência;
+- migrations.
+
+### Direção de dependências recomendada
+
+Para manter uma arquitetura coerente, a direção de referências entre projetos deve ficar, no mínimo, assim:
+
+- `Domain`: sem depender de outros projetos da solução;
+- `Application`: depende de `Domain`;
+- `Infrastructure`: depende de `Domain`;
+- `API`: depende de `Application` e `Infrastructure`.
+
+> Observação importante: durante a análise do estado atual do projeto, foi identificado que a camada `Application` referencia a camada `API`. Isso deve ser corrigido para a versão de portfólio.
 
 ---
 
-## 7. Casos de Uso Principais
+## 9. Fluxo funcional mínimo esperado
 
-### UC01 - Cadastrar Produto
-**Ator**: Usuário do sistema  
-**Pré-condições**: Categoria e Fornecedor já cadastrados  
-**Fluxo Principal**:
-1. Usuário envia dados do produto via API
-2. Sistema valida dados obrigatórios (nome, SKU, preço, categoria, fornecedor)
-3. Sistema verifica se SKU já existe
-4. Sistema cria produto com estoque inicial zerado
-5. Sistema retorna produto cadastrado
+A demonstração mínima da API deve permitir o seguinte fluxo:
 
-**Fluxos Alternativos**:
-- 3a. SKU já existe → retorna erro 409 (Conflict)
-- 2a. Dados inválidos → retorna erro 400 (Bad Request) com detalhes
+1. criar uma categoria;
+2. criar um produto vinculado à categoria;
+3. cadastrar um usuário;
+4. registrar uma entrada de estoque para o produto;
+5. registrar uma saída de estoque para o produto;
+6. consultar o produto e confirmar que o estoque foi atualizado;
+7. consultar as movimentações registradas.
 
-### UC02 - Registrar Entrada de Estoque
-**Ator**: Usuário do sistema  
-**Pré-condições**: Produto cadastrado  
-**Fluxo Principal**:
-1. Usuário envia dados da movimentação (produto, quantidade, motivo)
-2. Sistema valida dados obrigatórios
-3. Sistema registra estoque anterior
-4. Sistema incrementa quantidade em estoque do produto
-5. Sistema cria registro de movimentação (tipo: Entrada)
-6. Sistema registra estoque atual
-7. Sistema retorna movimentação registrada
-
-**Fluxos Alternativos**:
-- 2a. Produto não encontrado → retorna erro 404 (Not Found)
-- 2b. Quantidade inválida (≤0) → retorna erro 400 (Bad Request)
-
-### UC03 - Registrar Saída de Estoque
-**Ator**: Usuário do sistema  
-**Pré-condições**: Produto cadastrado com estoque disponível  
-**Fluxo Principal**:
-1. Usuário envia dados da movimentação (produto, quantidade, motivo)
-2. Sistema valida dados obrigatórios
-3. Sistema verifica se há estoque suficiente
-4. Sistema registra estoque anterior
-5. Sistema decrementa quantidade em estoque do produto
-6. Sistema cria registro de movimentação (tipo: Saída)
-7. Sistema registra estoque atual
-8. Sistema retorna movimentação registrada
-
-**Fluxos Alternativos**:
-- 3a. Estoque insuficiente → retorna erro 400 (Bad Request) informando estoque atual
-- 2a. Produto não encontrado → retorna erro 404 (Not Found)
-
-### UC04 - Listar Produtos Abaixo do Estoque Mínimo
-**Ator**: Usuário do sistema  
-**Fluxo Principal**:
-1. Usuário solicita lista de produtos críticos
-2. Sistema busca produtos onde QuantidadeEstoque < EstoqueMinimo
-3. Sistema retorna lista com produto, estoque atual e estoque mínimo
-
-### UC05 - Gerar Relatório de Movimentações
-**Ator**: Usuário do sistema  
-**Pré-condições**: Período de data informado  
-**Fluxo Principal**:
-1. Usuário informa filtros (produto, data início, data fim, tipo movimentação)
-2. Sistema busca movimentações conforme filtros
-3. Sistema agrupa e calcula totais
-4. Sistema retorna relatório em formato JSON ou CSV
+Se esse fluxo estiver funcionando de ponta a ponta, o projeto já cumpre bem seu objetivo de portfólio.
 
 ---
 
-## 8. Endpoints da API (Sugestão)
+## 10. Endpoints mínimos esperados
 
-### Produtos
-- `GET /api/produtos` - Listar produtos (com paginação e filtros)
-- `GET /api/produtos/{id}` - Buscar produto por ID
-- `POST /api/produtos` - Cadastrar produto
-- `PUT /api/produtos/{id}` - Atualizar produto
-- `DELETE /api/produtos/{id}` - Excluir produto (soft delete)
-- `GET /api/produtos/estoque-baixo` - Produtos abaixo do estoque mínimo
+A versão de portfólio deve expor pelo menos os seguintes grupos de endpoints:
 
 ### Categorias
-- `GET /api/categorias` - Listar categorias
-- `GET /api/categorias/{id}` - Buscar categoria por ID
-- `POST /api/categorias` - Cadastrar categoria
-- `PUT /api/categorias/{id}` - Atualizar categoria
-- `DELETE /api/categorias/{id}` - Excluir categoria
+- `GET /api/categorias`
+- `GET /api/categorias/{id}`
+- `POST /api/categorias`
+- `PUT /api/categorias/{id}`
+- `DELETE /api/categorias/{id}`
 
-### Fornecedores
-- `GET /api/fornecedores` - Listar fornecedores
-- `GET /api/fornecedores/{id}` - Buscar fornecedor por ID
-- `POST /api/fornecedores` - Cadastrar fornecedor
-- `PUT /api/fornecedores/{id}` - Atualizar fornecedor
-- `DELETE /api/fornecedores/{id}` - Excluir fornecedor
+### Produtos
+- `GET /api/produtos`
+- `GET /api/produtos/{id}`
+- `POST /api/produtos`
+- `PUT /api/produtos/{id}`
+- `DELETE /api/produtos/{id}`
+
+### Usuários
+- `GET /api/usuarios`
+- `GET /api/usuarios/{id}`
+- `POST /api/usuarios`
+- `PUT /api/usuarios/{id}`
+- `DELETE /api/usuarios/{id}`
 
 ### Movimentações
-- `GET /api/movimentacoes` - Listar movimentações (com filtros)
-- `GET /api/movimentacoes/{id}` - Buscar movimentação por ID
-- `POST /api/movimentacoes/entrada` - Registrar entrada
-- `POST /api/movimentacoes/saida` - Registrar saída
-- `GET /api/movimentacoes/produto/{produtoId}` - Histórico de um produto
+- `GET /api/movimentacoes`
+- `GET /api/movimentacoes/{id}`
+- `POST /api/movimentacoes/entrada`
+- `POST /api/movimentacoes/saida`
 
-### Relatórios
-- `GET /api/relatorios/estoque-atual` - Estoque atual consolidado
-- `GET /api/relatorios/valor-estoque` - Valor total em estoque
-- `GET /api/relatorios/movimentacoes` - Relatório de movimentações por período
+> Esses endpoints representam o recorte mínimo. Filtros, paginação e relatórios podem ser tratados como evolução futura.
 
 ---
 
-## 9. Tecnologias Sugeridas
+## 11. Estado atual identificado na análise
 
-### Essenciais
-- **.NET 8.0** (LTS)
-- **ASP.NET Core Web API**
-- **Entity Framework Core** (com Migrations)
-- **SQL Server Express** ou **PostgreSQL**
+Com base na análise estática do projeto enviado, foi identificado o seguinte cenário:
 
-### Bibliotecas Recomendadas
-- **AutoMapper** - Mapeamento entre entidades e DTOs
-- **FluentValidation** - Validação de dados
-- **Swashbuckle (Swagger)** - Documentação da API
-- **Serilog** - Logging estruturado
-- **Bogus** (opcional) - Geração de dados fake para testes
+### Pontos já existentes
+- estrutura da solução em camadas;
+- entidades principais do domínio;
+- DTOs e serviços iniciais;
+- repositórios e `DbContext`;
+- documentação inicial.
 
-### Ferramentas de Desenvolvimento
-- **Visual Studio 2022** ou **VS Code + C# Dev Kit**
-- **Postman** ou **Insomnia** - Testes de API
-- **SQL Server Management Studio** ou **Azure Data Studio**
-- **Git** + **GitHub**
-
----
-
-## 10. Regras de Negócio Importantes
-
-### RN01 - Estoque Não Pode Ser Negativo
-- Ao registrar saída, validar se quantidade solicitada ≤ estoque atual
-- Se insuficiente, retornar erro com estoque disponível
-
-### RN02 - SKU Único
-- Não permitir cadastro de produtos com SKU duplicado
-- Validar na camada de Application antes de persistir
-
-### RN03 - CNPJ Único para Fornecedores
-- Não permitir dois fornecedores com mesmo CNPJ
-- Implementar validação de formato de CNPJ
-
-### RN04 - Soft Delete
-- Ao excluir produto/fornecedor/categoria, apenas marcar como inativo
-- Manter histórico de movimentações mesmo de produtos inativos
-
-### RN05 - Integridade Referencial
-- Não permitir exclusão de categoria com produtos vinculados
-- Não permitir exclusão de fornecedor com produtos vinculados
-- Validar na camada de Service antes de chamar Repository
-
-### RN06 - Rastreamento de Movimentações
-- Toda alteração de estoque deve gerar registro em MovimentacaoEstoque
-- Registrar estoque anterior e atual para auditoria
-
-### RN07 - Validação de Preços
-- Preço unitário deve ser maior que zero
-- Valor da movimentação calculado automaticamente (quantidade × preço)
+### Pontos ainda pendentes
+- controllers;
+- integração completa da API com Application e Infrastructure;
+- configuração de banco na API;
+- injeção de dependência;
+- migrations;
+- integração consistente entre movimentação e estoque;
+- ajuste da direção das dependências entre projetos;
+- limpeza do repositório.
 
 ---
 
-## 11. Considerações de Implementação
+## 12. Decisão de escopo para evitar complexidade excessiva
 
-### Paginação
-Implementar paginação em todas as listagens:
-- Parâmetros: `pageNumber` (padrão: 1) e `pageSize` (padrão: 10, máximo: 100)
-- Retornar metadados: total de itens, total de páginas, página atual
+Como este projeto é secundário em relação a um projeto principal maior, a decisão recomendada é:
 
-### Tratamento de Erros
-Criar middleware global para capturar exceções:
-- Exceções de domínio → 400 (Bad Request)
-- Entidade não encontrada → 404 (Not Found)
-- Violação de regra única → 409 (Conflict)
-- Erros não tratados → 500 (Internal Server Error)
+- **não expandir demais o escopo agora**;
+- **finalizar uma versão simples e funcional**;
+- **documentar com honestidade o que está implementado**;
+- **deixar recursos avançados como backlog**.
 
-### DTOs vs Entidades
-- Nunca expor entidades diretamente nos controllers
-- Criar DTOs específicos para Request e Response
-- Usar AutoMapper para conversões
-
-### Validações
-- Validações simples (obrigatório, tamanho) → Data Annotations ou FluentValidation
-- Validações complexas (regras de negócio) → Services
-- Validações de infraestrutura (CNPJ, e-mail) → Validators customizados
+Essa decisão melhora o custo-benefício do projeto como peça de portfólio.
 
 ---
 
-## 12. Próximos Passos (Após Implementação Básica)
+## 13. Backlog futuro sugerido
 
-### Melhorias Futuras
-1. **Autenticação e Autorização** (JWT)
-2. **Controle de Lotes** (rastreamento por lote de produtos)
-3. **Código de Barras** (geração e leitura)
-4. **Dashboard** (frontend simples com gráficos)
-5. **Notificações** (e-mail quando estoque crítico)
-6. **Importação/Exportação** (Excel, CSV)
-7. **Multi-tenancy** (múltiplas empresas no mesmo sistema)
-8. **Auditoria** (quem/quando fez cada alteração)
+Itens que podem ser adicionados depois, sem comprometer a versão atual:
 
----
-
-## 13. Checklist de Desenvolvimento
-
-### Setup Inicial
-- [ ] Criar repositório no GitHub
-- [ ] Configurar .gitignore para .NET
-- [ ] Criar estrutura de pastas (camadas)
-- [ ] Configurar connection string
-- [ ] Instalar pacotes NuGet necessários
-
-### Camada de Domínio
-- [ ] Criar entidades (Produto, Categoria, Fornecedor, MovimentacaoEstoque)
-- [ ] Criar enums (TipoMovimentacao)
-- [ ] Criar interfaces de repositórios
-- [ ] Criar exceções customizadas
-
-### Camada de Infraestrutura
-- [ ] Configurar DbContext
-- [ ] Configurar Fluent API para entidades
-- [ ] Implementar repositórios
-- [ ] Criar migration inicial
-- [ ] Aplicar migration no banco
-
-### Camada de Aplicação
-- [ ] Criar DTOs de Request e Response
-- [ ] Configurar AutoMapper
-- [ ] Implementar validators (FluentValidation)
-- [ ] Implementar Services
-
-### Camada de API
-- [ ] Criar Controllers
-- [ ] Configurar Swagger
-- [ ] Implementar middleware de erros
-- [ ] Configurar CORS
-- [ ] Configurar logging
-
-### Testes
-- [ ] Testar todos os endpoints no Postman/Insomnia
-- [ ] Validar regras de negócio
-- [ ] Testar cenários de erro
-- [ ] Verificar validações
-
-### Documentação
-- [ ] Completar README com instruções de setup
-- [ ] Documentar endpoints no Swagger
-- [ ] Adicionar exemplos de uso
-- [ ] Commitar e subir para GitHub
+- autenticação JWT;
+- perfis/permissões;
+- fornecedores;
+- relatórios e consultas agregadas;
+- paginação e filtros avançados;
+- exportação;
+- validação com FluentValidation;
+- AutoMapper;
+- logging estruturado;
+- testes automatizados;
+- Docker e deploy.
 
 ---
 
-## 14. Dicas de Desenvolvimento
+## 14. Observações sobre o repositório
 
-1. **Comece pelo Domínio**: Defina bem suas entidades antes de pensar em controllers
-2. **Use Migrations**: Sempre use migrations para alterar o banco, nunca manualmente
-3. **DTOs sempre**: Separe o que entra/sai da API do modelo de domínio
-4. **Valide cedo**: Quanto mais cedo você validar dados, melhor
-5. **Teste conforme desenvolve**: Não deixe para testar tudo no final
-6. **Commits pequenos e frequentes**: Um commit por feature/correção
-7. **README atualizado**: Documente setup, endpoints e decisões técnicas
+Foi identificado que o projeto contém arquivos de ambiente e compilação, como `.vs`, `bin` e `obj`. A causa provável é a presença de um arquivo `gitignore` sem ponto inicial, o que impede o Git de tratá-lo como `.gitignore`.
+
+Antes da publicação como portfólio, recomenda-se:
+
+- renomear `gitignore` para `.gitignore`;
+- remover arquivos já rastreados indevidamente;
+- revisar a estrutura final do repositório.
 
 ---
 
-**Boa sorte no desenvolvimento! Quando tiver dúvidas ou precisar discutir arquitetura/design, é só chamar.**
+## 15. Conclusão
+
+A base do projeto já demonstra uma boa direção técnica, especialmente em organização por camadas e modelagem inicial do domínio. Para transformá-lo em um projeto de portfólio forte, a melhor estratégia é concluir uma versão enxuta, coerente e executável, em vez de tentar implementar todas as ideias originalmente imaginadas.
+
+A prioridade deve ser: **fazer o sistema funcionar bem em um fluxo pequeno, mas completo**.

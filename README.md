@@ -1,174 +1,221 @@
 # Sistema de Controle de Estoque
 
-Sistema web para gerenciamento de estoque de produtos, desenvolvido com ASP.NET Core Web API e Entity Framework Core. Projeto acadêmico focado em demonstrar competências em desenvolvimento de APIs RESTful, modelagem de banco de dados e arquitetura em camadas.
+API de controle de estoque desenvolvida em ASP.NET Core com arquitetura em camadas. Este projeto foi criado com foco acadêmico e de portfólio, priorizando organização de código, modelagem de domínio e operações básicas de estoque.
 
-## 🎯 Objetivo
-
-Fornecer uma solução simples e eficiente para controle de inventário, permitindo:
-- Gestão de produtos, categorias e fornecedores
-- Controle de entradas e saídas de estoque
-- Alertas de estoque mínimo
-- Relatórios de movimentações e valor em estoque
-
-## 🛠️ Tecnologias Utilizadas
-
-- **.NET 8.0** - Framework principal
-- **ASP.NET Core Web API** - Desenvolvimento da API RESTful
-- **Entity Framework Core** - ORM para acesso a dados
-- **SQL Server / PostgreSQL** - Banco de dados relacional
-- **AutoMapper** - Mapeamento entre DTOs e entidades
-- **FluentValidation** - Validação de dados
-- **Swagger/OpenAPI** - Documentação da API
-- **Serilog** - Logging estruturado
-
-## 📋 Funcionalidades
-
-### Gestão de Produtos
-- ✅ Cadastro, edição e exclusão de produtos
-- ✅ Controle de estoque atual
-- ✅ Configuração de estoque mínimo e máximo
-- ✅ Código SKU único
-- ✅ Vinculação com categorias e fornecedores
-
-### Gestão de Categorias e Fornecedores
-- ✅ CRUD completo de categorias
-- ✅ CRUD completo de fornecedores
-- ✅ Validação de CNPJ único
-
-### Controle de Movimentações
-- ✅ Registro de entradas (compras, devoluções)
-- ✅ Registro de saídas (vendas, perdas)
-- ✅ Histórico completo de movimentações
-- ✅ Rastreamento de estoque anterior e atual
-- ✅ Validação de estoque disponível
-
-### Relatórios
-- ✅ Produtos em estoque
-- ✅ Produtos abaixo do estoque mínimo
-- ✅ Valor total em estoque
-- ✅ Histórico de movimentações por período
-- ✅ Exportação em JSON/CSV
-
-## 🏗️ Arquitetura
-
-O projeto segue os princípios de **Clean Architecture** com separação em camadas:
-
-```
-├── API Layer (Presentation)
-│   └── Controllers, Middlewares, Configuration
-├── Application Layer
-│   └── Services, DTOs, Validators, Mappings
-├── Domain Layer
-│   └── Entities, Interfaces, Enums, Business Rules
-└── Infrastructure Layer
-    └── Data Context, Repositories, Migrations
-```
-
-## 📦 Estrutura do Projeto
-
-```
-src/
-├── SistemaEstoque.API/              # Camada de apresentação (Web API)
-├── SistemaEstoque.Application/      # Lógica de aplicação e DTOs
-├── SistemaEstoque.Domain/           # Entidades e regras de negócio
-└── SistemaEstoque.Infrastructure/   # Acesso a dados e repositórios
-```
-
-## 🚀 Como Executar
-
-### Pré-requisitos
-
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
-- [SQL Server](https://www.microsoft.com/sql-server) ou [PostgreSQL](https://www.postgresql.org/)
-- [Visual Studio 2022](https://visualstudio.microsoft.com/) ou [VS Code](https://code.visualstudio.com/)
-
-### Instalação
-
-1. Clone o repositório
-```bash
-git clone https://github.com/seu-usuario/sistema-controle-estoque.git
-cd sistema-controle-estoque
-```
-
-2. Configure a connection string em `appsettings.json`
-```json
-"ConnectionStrings": {
-  "DefaultConnection": "Server=localhost;Database=EstoqueDB;Trusted_Connection=True;"
-}
-```
-
-3. Execute as migrations
-```bash
-cd src/SistemaEstoque.API
-dotnet ef database update
-```
-
-4. Execute a aplicação
-```bash
-dotnet run
-```
-
-5. Acesse a documentação da API
-```
-https://localhost:5001/swagger
-```
-
-## 📚 Documentação
-
-A documentação técnica completa está disponível em [`/docs/DOCUMENTATION.md`](./docs/DOCUMENTATION.md), incluindo:
-- Requisitos funcionais e não-funcionais
-- Diagramas de classes e banco de dados
-- Casos de uso detalhados
-- Endpoints da API
-- Regras de negócio
-
-## 🧪 Testes
-
-```bash
-# Executar todos os testes
-dotnet test
-
-# Executar com coverage
-dotnet test /p:CollectCoverage=true
-```
-
-## 📝 Endpoints Principais
-
-### Produtos
-- `GET /api/produtos` - Lista produtos com paginação
-- `POST /api/produtos` - Cadastra novo produto
-- `PUT /api/produtos/{id}` - Atualiza produto
-- `DELETE /api/produtos/{id}` - Remove produto
-
-### Movimentações
-- `POST /api/movimentacoes/entrada` - Registra entrada de estoque
-- `POST /api/movimentacoes/saida` - Registra saída de estoque
-- `GET /api/movimentacoes/produto/{id}` - Histórico de movimentações
-
-### Relatórios
-- `GET /api/relatorios/estoque-atual` - Estoque consolidado
-- `GET /api/relatorios/estoque-baixo` - Produtos abaixo do mínimo
-
-> Para a lista completa de endpoints, acesse `/swagger` após executar a aplicação.
-
-## 🤝 Contribuindo
-
-Este é um projeto acadêmico, mas sugestões são bem-vindas! Para contribuir:
-
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/MinhaFeature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona MinhaFeature'`)
-4. Push para a branch (`git push origin feature/MinhaFeature`)
-5. Abra um Pull Request
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## ✨ Autor
-
-**Guilherme** - Estudante de Análise e Desenvolvimento de Sistemas - FATEC Taubaté
+> **Status atual:** projeto em desenvolvimento. A base de domínio, aplicação e infraestrutura já existe, e o objetivo desta versão é evoluir o sistema para uma entrega **enxuta, funcional e demonstrável**.
 
 ---
 
-⭐ Se este projeto foi útil para você, considere dar uma estrela!
+## Objetivo do projeto
+
+Este projeto busca demonstrar, de forma prática:
+
+- modelagem de entidades e regras de negócio;
+- separação por camadas;
+- uso de Entity Framework Core com banco relacional;
+- construção de uma API REST para operações básicas de estoque;
+- organização suficiente para servir como projeto de portfólio.
+
+A meta desta versão **não** é ser um ERP completo. O foco é entregar um sistema pequeno, coerente e funcional.
+
+---
+
+## Escopo da versão de portfólio
+
+A versão que este repositório pretende entregar como portfólio contempla:
+
+- cadastro de categorias;
+- cadastro de produtos;
+- cadastro de usuários;
+- consulta de produtos e categorias;
+- registro de entrada de estoque;
+- registro de saída de estoque;
+- atualização automática do estoque do produto;
+- histórico de movimentações;
+- documentação da API via Swagger.
+
+### Regras centrais da versão de portfólio
+
+- cada produto pertence a uma categoria;
+- cada movimentação está vinculada a um produto e a um usuário;
+- entrada de estoque aumenta a quantidade disponível;
+- saída de estoque reduz a quantidade disponível;
+- o sistema não deve permitir saída maior do que o estoque disponível;
+- SKU deve ser único;
+- e-mail de usuário deve ser único.
+
+---
+
+## Funcionalidades já estruturadas no código
+
+O projeto já possui, em diferentes níveis de maturidade:
+
+- entidades de domínio (`Categoria`, `Produto`, `Usuario`, `Movimentacao`);
+- DTOs de entrada e saída;
+- interfaces de serviços e repositórios;
+- implementações iniciais de serviços;
+- `DbContext` e repositórios com Entity Framework Core;
+- organização da solução em camadas.
+
+---
+
+## Funcionalidades previstas para evolução futura
+
+Os itens abaixo fazem parte de uma visão mais ampla do sistema, mas **não são prioridade para a versão enxuta de portfólio**:
+
+- autenticação e autorização;
+- gestão de fornecedores;
+- relatórios avançados;
+- exportação de dados;
+- paginação e filtros mais completos;
+- logging estruturado;
+- validação formal com FluentValidation;
+- AutoMapper;
+- testes automatizados;
+- deploy e conteinerização.
+
+---
+
+## Tecnologias utilizadas
+
+- **.NET 8**
+- **ASP.NET Core Web API**
+- **Entity Framework Core**
+- **SQL Server**
+- **Swagger / OpenAPI**
+- **C#**
+
+> Observação: algumas tecnologias citadas em versões anteriores da documentação, como AutoMapper, FluentValidation e Serilog, foram tratadas como ideias de evolução e não devem ser consideradas como implementadas até estarem presentes no código.
+
+---
+
+## Arquitetura do projeto
+
+A solução foi organizada em camadas:
+
+```text
+src/
+├── SistemaEstoque.API/              # Camada de apresentação (Web API)
+├── SistemaEstoque.Application/      # Serviços de aplicação e DTOs
+├── SistemaEstoque.Domain/           # Entidades, enums e regras de negócio
+└── SistemaEstoque.Infrastructure/   # DbContext e repositórios
+```
+
+### Papel de cada camada
+
+- **Domain**: representa as entidades principais e as regras centrais do sistema.
+- **Application**: coordena operações da aplicação usando DTOs, serviços e interfaces.
+- **Infrastructure**: faz o acesso a dados com EF Core e implementa os repositórios.
+- **API**: expõe os endpoints HTTP e concentra a configuração da aplicação.
+
+---
+
+## Estado atual do projeto
+
+Com base na análise do código atual, o projeto já possui uma boa base estrutural, mas ainda precisa de integração para ficar funcional como API de portfólio.
+
+### O que já existe
+
+- modelagem inicial do domínio;
+- camada de aplicação com DTOs, interfaces e serviços;
+- camada de infraestrutura com `DbContext` e repositórios;
+- documentação técnica inicial.
+
+### O que ainda precisa ser concluído
+
+- criação dos controllers;
+- configuração completa da API;
+- injeção de dependência;
+- configuração da conexão com banco;
+- migrations;
+- integração consistente entre movimentação e atualização de estoque;
+- revisão das referências entre projetos;
+- limpeza do repositório e ajuste do `.gitignore`.
+
+---
+
+## Como executar
+
+> **Importante:** este passo a passo descreve a forma esperada de execução da versão funcional do projeto. Se o repositório ainda estiver em fase intermediária, alguns passos podem depender de implementações pendentes.
+
+### Pré-requisitos
+
+- .NET 8 SDK
+- SQL Server
+- Visual Studio 2022 ou VS Code
+
+### Passos esperados
+
+1. Clonar o repositório.
+2. Ajustar a connection string no `appsettings.json` da API.
+3. Executar as migrations.
+4. Rodar a aplicação.
+5. Acessar o Swagger para testar os endpoints.
+
+Exemplo de connection string:
+
+```json
+"ConnectionStrings": {
+  "DefaultConnection": "Server=localhost;Database=SistemaEstoqueDb;Trusted_Connection=True;TrustServerCertificate=True;"
+}
+```
+
+Comandos esperados:
+
+```bash
+dotnet ef database update
+dotnet run
+```
+
+---
+
+## Estrutura mínima esperada de endpoints
+
+A versão de portfólio deve expor, pelo menos, endpoints para:
+
+- categorias;
+- produtos;
+- usuários;
+- movimentações.
+
+Fluxo mínimo de demonstração esperado:
+
+1. criar categoria;
+2. criar produto vinculado à categoria;
+3. cadastrar usuário;
+4. registrar entrada de estoque;
+5. registrar saída de estoque;
+6. consultar produto com estoque atualizado;
+7. consultar histórico de movimentações.
+
+---
+
+## Documentação
+
+A documentação técnica principal está em:
+
+- [`docs/Sistema-Controle-Estoque-Documentacao.md`](./docs/Sistema-Controle-Estoque-Documentacao.md)
+
+Também foi criada uma checklist prática para guiar a conclusão da versão de portfólio:
+
+- [`docs/Checklist-Versao-Portfolio.md`](./docs/Checklist-Versao-Portfolio.md)
+
+---
+
+## Observações sobre o repositório
+
+Durante a análise, foi identificado que o projeto contém arquivos de ambiente do Visual Studio e de compilação. Isso provavelmente ocorreu porque o arquivo de ignore está nomeado como `gitignore`, e não como `.gitignore`.
+
+Antes de publicar o projeto como portfólio, é recomendado:
+
+- renomear `gitignore` para `.gitignore`;
+- remover `.vs`, `bin` e `obj` do versionamento;
+- revisar o README para manter o retrato fiel do estado do projeto.
+
+---
+
+## Autor
+
+**Guilherme Martins**  
+Estudante de Análise e Desenvolvimento de Sistemas  
+Projeto acadêmico com foco em portfólio backend
