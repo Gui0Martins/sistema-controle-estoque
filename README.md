@@ -1,8 +1,10 @@
 # Sistema de Controle de Estoque
 
-API de controle de estoque desenvolvida em ASP.NET Core com arquitetura em camadas. Este projeto foi criado com foco acadêmico e de portfólio, priorizando organização de código, modelagem de domínio e operações básicas de estoque.
+API de controle de estoque desenvolvida em ASP.NET Core com arquitetura em camadas. Este projeto foi criado com foco acadêmico e de portfólio, priorizando organização de código, modelagem de entidades, serviços e infraestrutura.
 
-> **Status atual:** projeto em desenvolvimento. A base de domínio, aplicação e infraestrutura já existe, e o objetivo desta versão é evoluir o sistema para uma entrega **enxuta, funcional e demonstrável**.
+> **Status atual:** projeto em pausa. Estou focando em outro projeto com prioridade maior no momento.
+
+> **Status atual:** projeto em desenvolvimento. A base de domínio, aplicação e infraestrutura já existe, e o objetivo desta versão é evoluir o sistema para uma entrega enxuta, funcional e organizada.
 
 ---
 
@@ -16,7 +18,7 @@ Este projeto busca demonstrar, de forma prática:
 - construção de uma API REST para operações básicas de estoque;
 - organização suficiente para servir como projeto de portfólio.
 
-A meta desta versão **não** é ser um ERP completo. O foco é entregar um sistema pequeno, coerente e funcional.
+A meta desta versão não é ser um ERP completo. O foco é entregar um sistema pequeno, coerente e funcional.
 
 ---
 
@@ -61,7 +63,7 @@ O projeto já possui, em diferentes níveis de maturidade:
 
 ## Funcionalidades previstas para evolução futura
 
-Os itens abaixo fazem parte de uma visão mais ampla do sistema, mas **não são prioridade para a versão enxuta de portfólio**:
+Os itens abaixo fazem parte de uma visão mais ampla do sistema, mas não são prioridade para a versão enxuta de portfólio:
 
 - autenticação e autorização;
 - gestão de fornecedores;
@@ -85,7 +87,7 @@ Os itens abaixo fazem parte de uma visão mais ampla do sistema, mas **não são
 - **Swagger / OpenAPI**
 - **C#**
 
-> Observação: algumas tecnologias citadas em versões anteriores da documentação, como AutoMapper, FluentValidation e Serilog, foram tratadas como ideias de evolução e não devem ser consideradas como implementadas até estarem presentes no código.
+> Observação: algumas tecnologias citadas em versões anteriores da documentação, como AutoMapper, FluentValidation e Serilog, foram tratadas como ideias de evolução e não devem ser consideradas requisitos imediatos do projeto.
 
 ---
 
@@ -136,7 +138,7 @@ Com base na análise do código atual, o projeto já possui uma boa base estrutu
 
 ## Como executar
 
-> **Importante:** este passo a passo descreve a forma esperada de execução da versão funcional do projeto. Se o repositório ainda estiver em fase intermediária, alguns passos podem depender de implementações pendentes.
+> **Importante:** este passo a passo descreve a forma esperada de execução da versão funcional do projeto. Se o repositório ainda estiver em fase intermediária, alguns passos podem depender da etapa de implementação em andamento.
 
 ### Pré-requisitos
 
@@ -204,7 +206,7 @@ Também foi criada uma checklist prática para guiar a conclusão da versão de 
 
 ## Observações sobre o repositório
 
-Durante a análise, foi identificado que o projeto contém arquivos de ambiente do Visual Studio e de compilação. Isso provavelmente ocorreu porque o arquivo de ignore está nomeado como `gitignore`, e não como `.gitignore`.
+Durante a análise, foi identificado que o projeto contém arquivos de ambiente do Visual Studio e de compilação. Isso provavelmente ocorreu porque o arquivo de ignore está nomeado como `gitignore` em vez de `.gitignore`.
 
 Antes de publicar o projeto como portfólio, é recomendado:
 
