@@ -1,8 +1,8 @@
 # Sistema de Controle de Estoque
 
-API de controle de estoque desenvolvida em ASP.NET Core com arquitetura em camadas. Este projeto foi criado com foco acadêmico e de portfólio, priorizando organização de código, modelagem de entidades, serviços e infraestrutura.
+> **Aviso:** este projeto está em pausa temporária enquanto estou trabalhando em outro projeto com prioridade maior.
 
-> **Status atual:** projeto em pausa. Estou focando em outro projeto com prioridade maior no momento.
+API de controle de estoque desenvolvida em ASP.NET Core com arquitetura em camadas. Este projeto foi criado com foco acadêmico e de portfólio, priorizando organização de código, modelagem de entidades, serviços e infraestrutura.
 
 > **Status atual:** projeto em desenvolvimento. A base de domínio, aplicação e infraestrutura já existe, e o objetivo desta versão é evoluir o sistema para uma entrega enxuta, funcional e organizada.
 
